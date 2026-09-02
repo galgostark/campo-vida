@@ -667,3 +667,24 @@ h1, h2, h3, h4, h5, h6 {
     padding: 40px 25px;
   }
 }
+
+/* Preloader Fail-safe Animation */
+@keyframes cvAutoHideLoader {
+  0%, 65% {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+  }
+  100% {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    display: none;
+  }
+}
+
+.se-pre-con {
+  animation: cvAutoHideLoader 1.5s ease forwards;
+  animation-delay: 0.1s;
+}
+

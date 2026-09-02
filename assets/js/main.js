@@ -8,8 +8,18 @@
 (function($) {
     "use strict";
 
-    $(document).ready( function() {
+    // Immediate & Fail-safe Preloader dismisser
+    function hidePreloader() {
+        var preloader = $(".se-pre-con");
+        if (preloader.length) {
+            preloader.fadeOut(350);
+        }
+    }
+    $(window).on('load', hidePreloader);
+    setTimeout(hidePreloader, 1500);
 
+    $(document).ready( function() {
+        setTimeout(hidePreloader, 800);
 
 		/* ==================================================
 			# Data Background
@@ -22,12 +32,16 @@
 		/* ==================================================
 			# Fun Factor Init
 		===============================================*/
+		if (typeof $.fn.countTo === 'function') {
 			$('.timer').countTo();
-			$('.fun-fact').appear(function() {
-				$('.timer').countTo();
-			}, {
-				accY: -100
-			});
+			if (typeof $.fn.appear === 'function') {
+				$('.fun-fact').appear(function() {
+					$('.timer').countTo();
+				}, {
+					accY: -100
+				});
+			}
+		}
 		
 		
 		/* ==================================================
@@ -495,11 +509,13 @@
 			# Scroll to top
 		 =============================================== */
 		
-		$('.wodryRX').wodry({
-			animation: 'rotateX',
-			delay: 2000,
-			animationDuration: 1600
-		});
+		if (typeof $.fn.wodry === 'function') {
+			$('.wodryRX').wodry({
+				animation: 'rotateX',
+				delay: 2000,
+				animationDuration: 1600
+			});
+		}
 		
     }); // end document ready function
 })(jQuery); // End jQuery
