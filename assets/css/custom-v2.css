@@ -53,7 +53,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .header-2 .navbar-nav .nav-item .nav-link:hover,
 .header-2 .navbar-nav .nav-item .nav-link.active {
-  color: var(--cv-green-primary) !important;
+  color: #FF4A17 !important;
 }
 
 .header-2 .navbar-nav .nav-item .nav-link.active::after {
@@ -63,7 +63,7 @@ h1, h2, h3, h4, h5, h6 {
   left: 18px;
   right: 18px;
   height: 3px;
-  background-color: var(--cv-green-primary);
+  background-color: #FF4A17;
   border-radius: 2px;
 }
 
